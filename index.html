@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio of Pulleti Parvathi - Python Backend Developer. Experienced in Django, Django REST Framework, PostgreSQL, and building secure, scalable backend applications.">
+    <title>Pulleti Parvathi | Python Backend Developer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="light-theme">
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="terminal-header">
+                <span class="terminal-btn close"></span>
+                <span class="terminal-btn minimize"></span>
+                <span class="terminal-btn maximize"></span>
+                <span class="terminal-title">parvathi@backend-srv:~</span>
+            </div>
+            <div class="terminal-body" id="loader-console">
+                <p class="console-line text-accent">Initializing system deployment...</p>
+                <!-- Dynamically populated via JS for simulation -->
+            </div>
+            <div class="loader-progress-container">
+                <div class="loader-progress-bar" id="loader-progress"></div>
+            </div>
+            <div class="loader-percentage" id="loader-percent">0%</div>
+        </div>
+    </div>
+
+    <!-- 2. STICKY NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                PARVATHI<span class="logo-accent">.py</span>
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#contact" class="btn-primary nav-cta">Let's Connect</a>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open mobile menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Scroll Progress Bar -->
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </nav>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mobile-menu-drawer" id="mobile-menu-drawer">
+        <div class="drawer-header">
+            <a href="#hero" class="logo">PARVATHI<span class="logo-accent">.py</span></a>
+            <button class="close-drawer-btn" id="close-drawer-btn">&times;</button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="#hero" class="drawer-link">Home</a></li>
+            <li><a href="#about" class="drawer-link">About</a></li>
+            <li><a href="#skills" class="drawer-link">Skills</a></li>
+            <li><a href="#experience" class="drawer-link">Experience</a></li>
+            <li><a href="#projects" class="drawer-link">Projects</a></li>
+            <li><a href="#contact" class="drawer-link">Contact</a></li>
+        </ul>
+        <div class="drawer-footer">
+            <a href="mailto:pulletiparvathi@gmail.com" class="drawer-email">pulletiparvathi@gmail.com</a>
+            <div class="drawer-socials">
+                <a href="https://github.com/pulletiparvathi" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/pulleti-parvathi-6a84b9295" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. HERO SECTION -->
+    <header id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <div class="hero-badge reveal-in">
+                    <span class="badge-dot"></span> Python Backend Developer
+                </div>
+                <h1 class="hero-title reveal-in">
+                    <span class="salutation">HELLO, I'M</span>
+                    <span class="name">PULLETI PARVATHI</span>
+                </h1>
+                <h2 class="hero-subtitle reveal-in">
+                    I am a <span id="typed-text" class="typed-text"></span><span class="typed-cursor">|</span>
+                </h2>
+                <p class="hero-description reveal-in">
+                    I build secure, scalable, and high-performance backend applications using Python, Django REST Framework, and PostgreSQL.
+                </p>
+                <div class="hero-actions reveal-in">
+                    <a href="#projects" class="btn btn-primary-filled"><i class="fa-solid fa-code"></i> View Projects</a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary-outlined" download><i class="fa-solid fa-download"></i> Download Resume</a>
+                    <a href="#contact" class="btn btn-accent-ghost">Contact Me <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="hero-visual reveal-in">
+                <!-- Premium Dynamic Architecture Animation Container -->
+                <div class="architecture-canvas-wrapper">
+                    <div class="architecture-terminal">
+                        <div class="terminal-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <span class="terminal-server-status"><span class="status-indicator live"></span> django-server: active</span>
+                    </div>
+                    <div class="architecture-canvas" id="architecture-diagram">
+                        <!-- SVG Diagram mapping connections -->
+                        <svg class="arch-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Grid -->
+                            <defs>
+                                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(226, 232, 240, 0.3)" stroke-width="1"/>
+                                </pattern>
+                                <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2563EB" />
+                                    <stop offset="100%" stop-color="#1D4ED8" />
+                                </linearGradient>
+                                <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#14B8A6" />
+                                    <stop offset="100%" stop-color="#0F766E" />
+                                </linearGradient>
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="6" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#grid)" class="grid-rect" />
+
+                            <!-- Flow Connection Paths (Animate Data Packets along these lines) -->
+                            <path id="path-client-gateway" d="M 70,200 L 190,200" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4" />
+                            <path id="path-gateway-auth" d="M 250,170 Q 250,90 350,90" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4" />
+                            <path id="path-gateway-db" d="M 310,200 L 390,200" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4" />
+                            <path id="path-gateway-cache" d="M 250,230 Q 250,310 350,310" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-dasharray="4 4" />
+
+                            <!-- Active Data Flow Lines (Drawn on top) -->
+                            <path class="flow-line" d="M 70,200 L 190,200" fill="none" stroke="#2563EB" stroke-width="2" />
+                            <path class="flow-line" d="M 250,170 Q 250,90 350,90" fill="none" stroke="#14B8A6" stroke-width="2" />
+                            <path class="flow-line" d="M 310,200 L 390,200" fill="none" stroke="#2563EB" stroke-width="2" />
+                            <path class="flow-line" d="M 250,230 Q 250,310 350,310" fill="none" stroke="#14B8A6" stroke-width="2" />
+
+                            <!-- Client Node -->
+                            <g class="node cursor-pointer" transform="translate(40, 175)" data-label="Client / API Request">
+                                <circle cx="25" cy="25" r="22" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+                                <circle cx="25" cy="25" r="18" fill="#F8FAFC"/>
+                                <foreignObject x="13" y="14" width="24" height="24">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="color: #0F172A; text-align: center;"><i class="fa-solid fa-laptop"></i></div>
+                                </foreignObject>
+                                <text x="25" y="60" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#0F172A" class="node-txt">Client</text>
+                            </g>
+
+                            <!-- API Gateway / DRF Node -->
+                            <g class="node cursor-pointer" transform="translate(190, 160)" data-label="Django REST Framework API Gateway">
+                                <rect x="0" y="0" width="120" height="80" rx="10" fill="url(#primaryGrad)" filter="url(#glow)" stroke="#2563EB" stroke-width="1" class="glow-node"/>
+                                <foreignObject x="10" y="15" width="100" height="50">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="color: white; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: bold; text-align: center; line-height: 1.2;">
+                                        Django<br/><span style="font-size: 9px; font-weight: normal; opacity: 0.9;">REST Framework</span>
+                                    </div>
+                                </foreignObject>
+                                <text x="60" y="95" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#0F172A" class="node-txt">API Gateway</text>
+                            </g>
+
+                            <!-- Authentication Node -->
+                            <g class="node cursor-pointer" transform="translate(350, 50)" data-label="JWT Authentication Layer">
+                                <rect x="0" y="0" width="100" height="60" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+                                <foreignObject x="10" y="10" width="80" height="40">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="color: #0F172A; font-family: 'Inter', sans-serif; font-size: 11px; text-align: center; margin-top: 5px;">
+                                        <i class="fa-solid fa-shield-halved" style="color: #14B8A6;"></i><br/><strong>JWT Auth</strong>
+                                    </div>
+                                </foreignObject>
+                                <text x="50" y="75" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#0F172A" class="node-txt">Security</text>
+                            </g>
+
+                            <!-- PostgreSQL Database Node -->
+                            <g class="node cursor-pointer" transform="translate(390, 160)" data-label="PostgreSQL Relational Database">
+                                <path d="M 0,15 C 0,0 80,0 80,15 L 80,65 C 80,80 0,80 0,65 Z" fill="url(#accentGrad)" stroke="#14B8A6" stroke-width="1"/>
+                                <path d="M 0,30 C 0,45 80,45 80,30" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.5"/>
+                                <path d="M 0,45 C 0,60 80,60 80,45" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.5"/>
+                                <path d="M 0,15 C 0,30 80,30 80,15" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.8"/>
+                                <foreignObject x="10" y="25" width="60" height="40">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="color: white; font-family: 'Manrope', sans-serif; font-size: 11px; font-weight: bold; text-align: center; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                                        Postgres
+                                    </div>
+                                </foreignObject>
+                                <text x="40" y="95" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#0F172A" class="node-txt">Database</text>
+                            </g>
+
+                            <!-- Redis Cache Node -->
+                            <g class="node cursor-pointer" transform="translate(350, 275)" data-label="Redis In-Memory Cache">
+                                <rect x="0" y="0" width="100" height="60" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+                                <foreignObject x="10" y="10" width="80" height="40">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" style="color: #0F172A; font-family: 'Inter', sans-serif; font-size: 11px; text-align: center; margin-top: 5px;">
+                                        <i class="fa-solid fa-bolt" style="color: #2563EB;"></i><br/><strong>Redis Cache</strong>
+                                    </div>
+                                </foreignObject>
+                                <text x="50" y="75" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#0F172A" class="node-txt">Cache</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="architecture-node-tooltip" id="node-tooltip">Hover over nodes to inspect details</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 4. ABOUT SECTION -->
+    <section id="about" class="about-section section-padding">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">ABOUT ME</span>
+                <h2 class="section-title">Architecting the Backbone of Applications</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Profile Card -->
+                <div class="about-card about-profile-card col-span-2 reveal-in">
+                    <div class="profile-image-container">
+                        <img src="images/profile.jpg" alt="Pulleti Parvathi" class="profile-img">
+                    </div>
+                    <div class="profile-info">
+                        <h3>Pulleti Parvathi</h3>
+                        <p class="profile-role">Python Backend Developer</p>
+                        <div class="profile-socials">
+                            <a href="https://github.com/pulletiparvathi" target="_blank" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/pulleti-parvathi-6a84b9295" target="_blank" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 1: Professional Summary -->
+                <div class="about-card col-span-4 reveal-in">
+                    <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Professional Summary</h3>
+                    <p>I am a passionate Python Backend Developer with professional experience building enterprise backend applications using Django and Django REST Framework. I enjoy designing scalable REST APIs, solving backend challenges, optimizing PostgreSQL databases, and writing clean, maintainable code.</p>
+                </div>
+
+                <!-- Card 2: Experience Highlights -->
+                <div class="about-card col-span-3 reveal-in">
+                    <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Experience Highlights</h3>
+                    <ul class="card-bullets">
+                        <li>Designing & developing secure RESTful APIs.</li>
+                        <li>Integrating third-party systems & payroll modules.</li>
+                        <li>Database query design & schema optimizations.</li>
+                        <li>Debugging and resolving production bottlenecks.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Career Objective -->
+                <div class="about-card col-span-3 reveal-in">
+                    <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Career Objective</h3>
+                    <p>To leverage backend engineering expertise in dynamic environments. Aiming to build enterprise-scale web services, enhance system architecture, and collaborate with cross-functional agile teams to deliver solid software solutions.</p>
+                </div>
+
+                <!-- Card 4: Strengths -->
+                <div class="about-card col-span-3 reveal-in">
+                    <div class="card-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3>Core Strengths</h3>
+                    <div class="strengths-tags">
+                        <span class="strength-tag">Problem Solving</span>
+                        <span class="strength-tag">Database Optimization</span>
+                        <span class="strength-tag">Agile Methodologies</span>
+                        <span class="strength-tag">API Design Patterns</span>
+                        <span class="strength-tag">Clean Code Advocate</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Current Focus -->
+                <div class="about-card col-span-3 reveal-in">
+                    <div class="card-icon"><i class="fa-solid fa-circle-notch fa-spin-slow"></i></div>
+                    <h3>Current Focus</h3>
+                    <p>Currently researching distributed system architectures, asynchronous task processing using Celery & Redis, and containerization using Docker to design even more scalable deployment patterns for Python microservices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SKILLS SECTION -->
+    <section id="skills" class="skills-section section-padding bg-slate">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">MY SKILLSET</span>
+                <h2 class="section-title">Core Languages, Frameworks & Tools</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill Cards -->
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon py-icon"><i class="fa-brands fa-python"></i></span>
+                        <span class="skill-badge">Core</span>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Core programming language. Proficient in object-oriented programming, data structures, profiling, scripting, and async programming.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon dj-icon"><i class="fa-solid fa-cubes"></i></span>
+                        <span class="skill-badge">Framework</span>
+                    </div>
+                    <h3>Django</h3>
+                    <p>Used to construct MVC structures, model database structures using Django ORM, and manage authentication mechanisms.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon drf-icon"><i class="fa-solid fa-network-wired"></i></span>
+                        <span class="skill-badge">API</span>
+                    </div>
+                    <h3>Django REST Framework</h3>
+                    <p>Building secure, scalable, and fully documented RESTful APIs with complex serializers, query filter parameters, and JWT tokens.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon flask-icon"><i class="fa-solid fa-flask"></i></span>
+                        <span class="skill-badge">Micro-Framework</span>
+                    </div>
+                    <h3>Flask</h3>
+                    <p>Designing lightweight APIs, serverless microservices, and customizable structures using Flask SQL-Alchemy extensions.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon api-icon"><i class="fa-solid fa-exchange-alt"></i></span>
+                        <span class="skill-badge">Design</span>
+                    </div>
+                    <h3>REST APIs</h3>
+                    <p>Designing uniform resources, handling status codes, authentication filters, CORS, rate limiting, and standard request/response payloads.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon pg-icon"><i class="fa-solid fa-database"></i></span>
+                        <span class="skill-badge">Primary DB</span>
+                    </div>
+                    <h3>PostgreSQL</h3>
+                    <p>Relational database management, index creation, trigger optimization, writing raw SQL queries, and optimizing Django queries.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon mysql-icon"><i class="fa-solid fa-server"></i></span>
+                        <span class="skill-badge">Database</span>
+                    </div>
+                    <h3>MySQL</h3>
+                    <p>Managing database operations, schema designing, foreign key constraints mapping, and transactional safety analysis.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon git-icon"><i class="fa-brands fa-git-alt"></i></span>
+                        <span class="skill-badge">VCS</span>
+                    </div>
+                    <h3>Git</h3>
+                    <p>Version control management, handling feature branching structures, pull request rebases, and workflow organization.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon github-icon"><i class="fa-brands fa-github"></i></span>
+                        <span class="skill-badge">Collaboration</span>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Managing source code, tracking project issues, utilizing project boards, and configuring automated CI/CD actions.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon postman-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                        <span class="skill-badge">Testing</span>
+                    </div>
+                    <h3>Postman</h3>
+                    <p>Writing automated API endpoints collections test suites, testing authorization tokens header integration, and mocking server payloads.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon html-icon"><i class="fa-brands fa-html5"></i></span>
+                        <span class="skill-badge">Frontend</span>
+                    </div>
+                    <h3>HTML5</h3>
+                    <p>Writing clear semantic web documents, adhering to modern accessibility layouts and structures.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon css-icon"><i class="fa-brands fa-css3-alt"></i></span>
+                        <span class="skill-badge">Styling</span>
+                    </div>
+                    <h3>CSS3</h3>
+                    <p>Writing adaptive layouts using CSS Grid and Flexbox, custom media queries, variable design tokens, and smooth keyframe animations.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon js-icon"><i class="fa-brands fa-js"></i></span>
+                        <span class="skill-badge">Logic</span>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>Integrating DOM events, consuming asynchronous fetch requests, JSON parsing, validation algorithms, and layout interactions.</p>
+                </div>
+
+                <div class="skill-card reveal-in">
+                    <div class="skill-card-header">
+                        <span class="skill-icon vscode-icon"><i class="fa-solid fa-code-compare"></i></span>
+                        <span class="skill-badge">IDE</span>
+                    </div>
+                    <h3>VS Code</h3>
+                    <p>Development environment, customized debugging layouts, running unit testing runners, and integrated terminal management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EXPERIENCE SECTION -->
+    <section id="experience" class="experience-section section-padding">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">WORK TIMELINE</span>
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Experience Item 1 -->
+                <div class="timeline-item reveal-in">
+                    <div class="timeline-marker">
+                        <div class="marker-dot pulsing"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header-meta">
+                            <span class="timeline-badge-active">Current Role</span>
+                            <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2025 - Present</span>
+                        </div>
+                        <h3 class="role-title">Backend Developer</h3>
+                        <h4 class="company-name">Startup Company</h4>
+                        <p class="experience-intro">Focused on designing, implementing, and optimizing primary server operations, enterprise integrations, and data handling workflows.</p>
+                        
+                        <div class="responsibilities-block">
+                            <h5>Key Responsibilities:</h5>
+                            <ul class="responsibility-list">
+                                <li>
+                                    <span class="resp-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <strong>REST API Development:</strong> Designed and implemented clean, standardized API endpoints with DRF, serving relational database structures efficiently.
+                                </li>
+                                <li>
+                                    <span class="resp-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <strong>Payroll Modules:</strong> Designed automated payroll modules calculations backend logic handling multi-state tax computations and employee deductions.
+                                </li>
+                                <li>
+                                    <span class="resp-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <strong>Authentication & Permissions:</strong> Implemented secure authentication with JWT and refined dynamic role-based access permissions.
+                                </li>
+                                <li>
+                                    <span class="resp-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <strong>PostgreSQL & Optimization:</strong> Optimized heavy SQL database operations and Django ORM lookups, reducing server response times by 30%.
+                                </li>
+                                <li>
+                                    <span class="resp-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <strong>Bug Fixes & Agile:</strong> Addressed critical production logs issues, resolved code bugs, and participated actively in sprints and daily standups.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="experience-tech-badges">
+                            <span class="tech-badge-sm">Python</span>
+                            <span class="tech-badge-sm">Django</span>
+                            <span class="tech-badge-sm">DRF</span>
+                            <span class="tech-badge-sm">PostgreSQL</span>
+                            <span class="tech-badge-sm">JWT Auth</span>
+                            <span class="tech-badge-sm">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PROJECTS SECTION -->
+    <section id="projects" class="projects-section section-padding bg-slate">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">PORTFOLIO WORK</span>
+                <h2 class="section-title">Featured Software Implementations</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Student Management System -->
+                <div class="project-card reveal-in" data-project-id="student-management-system">
+                    <div class="project-card-image">
+                        <div class="project-art-placeholder student-art">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div class="art-nodes-floating">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="project-badge">Featured System</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Student Management System</h3>
+                        <p class="project-card-description">
+                            A comprehensive web application designed to streamline academic operations, student profiles, attendance records, course enrollments, and grading management.
+                        </p>
+                        
+                        <div class="project-features-list">
+                            <span><i class="fa-solid fa-check"></i> Student & Faculty Portal</span>
+                            <span><i class="fa-solid fa-check"></i> Attendance & Grade Tracking</span>
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="project-tag-badge">Python</span>
+                            <span class="project-tag-badge">Django</span>
+                            <span class="project-tag-badge">PostgreSQL</span>
+                            <span class="project-tag-badge">DRF</span>
+                            <span class="project-tag-badge">HTML/CSS</span>
+                        </div>
+
+                        <div class="project-actions-row">
+                            <button class="btn-project btn-details" data-project="student-management-system">
+                                View Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/pulletiparvathi" target="_blank" class="btn-project btn-git">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Medical Shop Management & Medicine Inventory System -->
+                <div class="project-card reveal-in" data-project-id="medical-shop-management-system">
+                    <div class="project-card-image">
+                        <div class="project-art-placeholder medical-art">
+                            <i class="fa-solid fa-prescription-bottle-medical"></i>
+                            <div class="art-nodes-floating">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="project-badge">Full Stack System</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3 class="project-card-title">Medical Shop Management & Medicine Inventory System</h3>
+                        <p class="project-card-description">
+                            A web-based medical shop platform enabling pharmacy owners to manage medicine stock, batch numbers, expiry dates, and low-stock alerts while serving location-aware REST APIs for medicine availability.
+                        </p>
+
+                        <div class="project-features-list">
+                            <span><i class="fa-solid fa-check"></i> Stock & Expiry Tracking</span>
+                            <span><i class="fa-solid fa-check"></i> Location REST APIs</span>
+                        </div>
+
+                        <div class="project-tech-tags">
+                            <span class="project-tag-badge">Django</span>
+                            <span class="project-tag-badge">DRF</span>
+                            <span class="project-tag-badge">PostgreSQL</span>
+                            <span class="project-tag-badge">React</span>
+                            <span class="project-tag-badge">Vite</span>
+                            <span class="project-tag-badge">REST APIs</span>
+                        </div>
+
+                        <div class="project-actions-row">
+                            <button class="btn-project btn-details" data-project="medical-shop-management-system">
+                                View Details <i class="fa-solid fa-circle-info"></i>
+                            </button>
+                            <a href="https://github.com/pulletiparvathi" target="_blank" class="btn-project btn-git">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TECH STACK (CREATIVE LAYOUT) -->
+    <section id="tech-stack" class="tech-stack-section section-padding">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">STATION MAP</span>
+                <h2 class="section-title">Backend Architecture Badges</h2>
+                <div class="section-underline"></div>
+            </div>
+            
+            <p class="tech-stack-intro text-center">
+                A graphical blueprint representing the technologies integrated into my development ecosystem.
+            </p>
+
+            <div class="badge-canvas-container">
+                <div class="badge-canvas" id="badge-canvas">
+                    <!-- Dynamic nodes placed at creative coordinates using CSS positioning -->
+                    <div class="floating-badge badge-p1" style="--x: 10%; --y: 20%; --delay: 0s; --color: #2563EB;">
+                        <i class="fa-brands fa-python"></i> Python
+                    </div>
+                    <div class="floating-badge badge-p2" style="--x: 35%; --y: 12%; --delay: 1.5s; --color: #0F766E;">
+                        <i class="fa-solid fa-cubes"></i> Django
+                    </div>
+                    <div class="floating-badge badge-p3" style="--x: 65%; --y: 25%; --delay: 3s; --color: #2563EB;">
+                        <i class="fa-solid fa-network-wired"></i> DRF
+                    </div>
+                    <div class="floating-badge badge-p4" style="--x: 85%; --y: 15%; --delay: 0.8s; --color: #0F172A;">
+                        <i class="fa-solid fa-flask"></i> Flask
+                    </div>
+                    
+                    <div class="floating-badge badge-p5" style="--x: 20%; --y: 50%; --delay: 2.2s; --color: #14B8A6;">
+                        <i class="fa-solid fa-database"></i> PostgreSQL
+                    </div>
+                    <div class="floating-badge badge-p6" style="--x: 50%; --y: 45%; --delay: 0.4s; --color: #0284C7;">
+                        <i class="fa-solid fa-server"></i> MySQL
+                    </div>
+                    <div class="floating-badge badge-p7" style="--x: 80%; --y: 55%; --delay: 1.8s; --color: #F1502F;">
+                        <i class="fa-brands fa-git-alt"></i> Git
+                    </div>
+                    
+                    <div class="floating-badge badge-p8" style="--x: 12%; --y: 80%; --delay: 3.5s; --color: #0F172A;">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </div>
+                    <div class="floating-badge badge-p9" style="--x: 38%; --y: 78%; --delay: 1.2s; --color: #FF6C37;">
+                        <i class="fa-solid fa-paper-plane"></i> Postman
+                    </div>
+                    <div class="floating-badge badge-p10" style="--x: 62%; --y: 82%; --delay: 2.7s; --color: #E34F26;">
+                        <i class="fa-brands fa-html5"></i> HTML5
+                    </div>
+                    <div class="floating-badge badge-p11" style="--x: 82%; --y: 78%; --delay: 0.2s; --color: #1572B6;">
+                        <i class="fa-brands fa-css3-alt"></i> CSS3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. EDUCATION SECTION -->
+    <section id="education" class="education-section section-padding bg-slate">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">ACADEMICS</span>
+                <h2 class="section-title">Educational Foundation</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="education-timeline">
+                <!-- Degree 1: B.Tech -->
+                <div class="education-card reveal-in">
+                    <div class="edu-year">2022 - 2026</div>
+                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="edu-details">
+                        <span class="edu-level">Bachelor of Technology</span>
+                        <h3>Computer Science & Engineering</h3>
+                        <h4 class="edu-institution">DNR College of Engineering & Technology</h4>
+                        <div class="edu-meta">
+                            <span class="meta-item"><i class="fa-solid fa-star"></i> CGPA: <strong>7.57</strong></span>
+                            <span class="meta-item"><i class="fa-regular fa-clock"></i> Expected Graduation: <strong>2026</strong></span>
+                        </div>
+                        <p class="edu-desc">Deep-dived into core computer science concepts including Advanced Data Structures, Relational Database Management Systems, Compiler Design, Software Engineering, and Object-Oriented Analysis.</p>
+                    </div>
+                </div>
+
+                <!-- Degree 2: Intermediate -->
+                <div class="education-card reveal-in">
+                    <div class="edu-year">2020 - 2022</div>
+                    <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="edu-details">
+                        <span class="edu-level">Intermediate Education</span>
+                        <h3>Intermediate (MPC)</h3>
+                        <h4 class="edu-institution">S.V.S.S. Arts & Science College</h4>
+                        <div class="edu-meta">
+                            <span class="meta-item"><i class="fa-solid fa-percent"></i> Percentage: <strong>65%</strong></span>
+                        </div>
+                        <p class="edu-desc">Rigorous logic-focused academic curriculum with specialization in analytical mathematics, mechanics physics, and organic chemistry structures.</p>
+                    </div>
+                </div>
+
+                <!-- Degree 3: SSC -->
+                <div class="education-card reveal-in">
+                    <div class="edu-year">2019 - 2020</div>
+                    <div class="edu-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                    <div class="edu-details">
+                        <span class="edu-level">Secondary School Certificate</span>
+                        <h3>SSC (10th Standard)</h3>
+                        <h4 class="edu-institution">ZPHS School</h4>
+                        <div class="edu-meta">
+                            <span class="meta-item"><i class="fa-solid fa-percent"></i> Percentage: <strong>85%</strong></span>
+                        </div>
+                        <p class="edu-desc">Completed secondary school education with strong academic performance, specializing in analytical mathematics and general sciences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. CERTIFICATIONS SECTION -->
+    <section id="certifications" class="certifications-section section-padding">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">ACHIEVEMENTS</span>
+                <h2 class="section-title"><i class="fa-solid fa-award"></i> Certifications</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="certifications-grid">
+                <!-- Cert 1: Cloud Computing -->
+                <div class="cert-card reveal-in">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <h4 class="cert-issuer">NPTEL – IIT Kharagpur</h4>
+                    <div class="edu-meta">
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> Duration: <strong>Jan – Apr 2026 (12 Weeks)</strong></span>
+                    </div>
+                    <div class="edu-meta" style="margin-top: -8px; margin-bottom: var(--space-sm);">
+                        <span class="meta-item"><i class="fa-solid fa-award"></i> Grade: <strong>Elite</strong></span>
+                        <span class="meta-item"><i class="fa-solid fa-chart-simple"></i> Score: <strong>73%</strong></span>
+                    </div>
+                    <p class="cert-info">Successfully completed the NPTEL Cloud Computing course covering cloud architecture, virtualization, distributed computing, cloud deployment models, cloud security, and modern cloud technologies.</p>
+                    <div class="cert-footer">
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        <a href="certificates/cloud-computing.pdf" target="_blank" rel="noopener noreferrer" class="btn-cert-view">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cert 2: Database Management System -->
+                <div class="cert-card reveal-in">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3>Database Management System</h3>
+                    <h4 class="cert-issuer">NPTEL – IIT Kharagpur</h4>
+                    <div class="edu-meta">
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> Duration: <strong>Jan – Mar 2026 (8 Weeks)</strong></span>
+                    </div>
+                    <div class="edu-meta" style="margin-top: -8px; margin-bottom: var(--space-sm);">
+                        <span class="meta-item"><i class="fa-solid fa-award"></i> Grade: <strong>Elite</strong></span>
+                        <span class="meta-item"><i class="fa-solid fa-chart-simple"></i> Score: <strong>69%</strong></span>
+                    </div>
+                    <p class="cert-info">Successfully completed the NPTEL Database Management System course covering SQL, ER Modeling, Normalization, Transactions, Concurrency Control, Indexing, Query Processing, and Database Design.</p>
+                    <div class="cert-footer">
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        <a href="certificates/dbms.pdf" target="_blank" rel="noopener noreferrer" class="btn-cert-view">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cert 3: Machine Learning with Python -->
+                <div class="cert-card reveal-in">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-brands fa-ibm"></i>
+                    </div>
+                    <h3>Machine Learning with Python</h3>
+                    <h4 class="cert-issuer">IBM – Cognitive Class</h4>
+                    <div class="edu-meta">
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> Issued: <strong>Jan 17, 2026</strong></span>
+                    </div>
+                    <div class="edu-meta" style="margin-top: -8px; margin-bottom: var(--space-sm);">
+                        <span class="meta-item"><i class="fa-solid fa-award"></i> Course: <strong>ML0101EN</strong></span>
+                        <span class="meta-item"><i class="fa-solid fa-circle-check"></i> Status: <strong>Passing Grade</strong></span>
+                    </div>
+                    <p class="cert-info">Completed the Machine Learning with Python course (ML0101EN) powered by IBM Developer Skills Network on Cognitive Class. Mastered supervised & unsupervised learning, regression algorithms, classification models, clustering techniques, and SciKit-Learn.</p>
+                    <div class="cert-footer">
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        <a href="certificates/ibm-machine-learning.pdf" target="_blank" rel="noopener noreferrer" class="btn-cert-view">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Cert 4: Internship Program in Cloud Computing -->
+                <div class="cert-card reveal-in">
+                    <div class="cert-icon-wrapper">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing Internship</h3>
+                    <h4 class="cert-issuer">Council for Skills and Competencies (CSC India) – APSCHE</h4>
+                    <div class="edu-meta">
+                        <span class="meta-item"><i class="fa-regular fa-calendar"></i> Duration: <strong>Dec 2025 – Apr 2026</strong></span>
+                    </div>
+                    <div class="edu-meta" style="margin-top: -8px; margin-bottom: var(--space-sm);">
+                        <span class="meta-item"><i class="fa-solid fa-award"></i> Certificate ID: <strong>CSCIndia-ere2nooo</strong></span>
+                    </div>
+                    <p class="cert-info">Successfully completed the professional Internship Program in Cloud Computing offered by Council for Skills and Competencies (CSC India) under the APSCHE Student Internship Initiative at DNR College of Engineering and Technology.</p>
+                    <div class="cert-footer">
+                        <span class="badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        <a href="certificates/apsche-cloud-computing.jpeg" target="_blank" rel="noopener noreferrer" class="btn-cert-view">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. CONTACT SECTION -->
+    <section id="contact" class="contact-section section-padding bg-slate">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-tagline">GET IN TOUCH</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Details -->
+                <div class="contact-info reveal-in">
+                    <h3>Contact Information</h3>
+                    <p>Have an exciting opportunity or want to discuss a project? Reach out through the credentials below or fill out the contact form.</p>
+                    
+                    <div class="info-items-list">
+                        <!-- Email -->
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
+                            <div class="info-texts">
+                                <span>Email Me</span>
+                                <a href="mailto:pulletiparvathi@gmail.com">pulletiparvathi@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-texts">
+                                <span>Call Me</span>
+                                <a href="tel:+919398421394">+91 9398421394</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-texts">
+                                <span>Current Location</span>
+                                <p>Muggulla, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-socials-block">
+                        <h4>Social Profiles</h4>
+                        <div class="social-circles">
+                            <a href="https://github.com/pulletiparvathi" target="_blank" aria-label="GitHub Profile">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/pulleti-parvathi-6a84b9295" target="_blank" aria-label="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Card -->
+                <div class="contact-form-wrapper reveal-in">
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="form-name">Your Name</label>
+                                <input type="text" id="form-name" placeholder="John Doe" required>
+                                <span class="input-error" id="error-name">Name is required</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="form-email">Your Email</label>
+                                <input type="email" id="form-email" placeholder="johndoe@example.com" required>
+                                <span class="input-error" id="error-email">Valid email is required</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="form-message">Your Message</label>
+                                <textarea id="form-message" rows="5" placeholder="Let's build something scalable..." required></textarea>
+                                <span class="input-error" id="error-message">Message cannot be empty</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit" id="btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fa-regular fa-paper-plane"></i></span>
+                        </button>
+                        
+                        <div class="form-result" id="form-result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#hero" class="logo">PARVATHI<span class="logo-accent">.py</span></a>
+                <p>Building secure, scalable, and high-performance backend systems.</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Designed & Developed by <strong>PULLETI PARVATHI</strong>. All Rights Reserved.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/pulletiparvathi" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/pulleti-parvathi-6a84b9295" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Back To Top Button -->
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </footer>
+
+    <!-- PROJECT MODAL POPUP -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+            <div class="modal-grid" id="modal-content-area">
+                <!-- Populated dynamically via main.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="js/typing.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

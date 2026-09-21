@@ -1,0 +1,139 @@
+/* ==========================================================================
+   CSS KEYFRAMES
+   ========================================================================== */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Up */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Right */
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Blinking Terminal Cursor */
+@keyframes blinkCursor {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Pulsing Status Dot */
+@keyframes pulseNode {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 8px rgba(20, 184, 166, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+        opacity: 0;
+    }
+}
+
+/* Flow Packet along SVG Path */
+@keyframes flowDash {
+    to {
+        stroke-dashoffset: -40;
+    }
+}
+
+/* Floating Card / Visual Offset */
+@keyframes floatCard {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Drifting Badges */
+@keyframes driftBadges {
+    0% {
+        transform: translate(-50%, -50%) translateY(0) translateX(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-6px) translateX(4px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(4px) translateX(-4px);
+    }
+}
+
+/* Rotate Animation */
+@keyframes spinLoader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==========================================================================
+   REVEAL ON SCROLL CLASSES
+   ========================================================================== */
+.reveal-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.reveal-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for child animations */
+.reveal-in:nth-child(2) { transition-delay: 0.1s; }
+.reveal-in:nth-child(3) { transition-delay: 0.2s; }
+.reveal-in:nth-child(4) { transition-delay: 0.3s; }
+.reveal-in:nth-child(5) { transition-delay: 0.4s; }
+.reveal-in:nth-child(6) { transition-delay: 0.5s; }
+
+/* SVG Flow Styling */
+.flow-line {
+    stroke-dasharray: 8 8;
+    animation: flowDash 1.5s linear infinite;
+}
+
+/* Subtle Floating badges & widgets */
+.floating-widget {
+    animation: floatCard 3s ease-in-out infinite alternate;
+}
